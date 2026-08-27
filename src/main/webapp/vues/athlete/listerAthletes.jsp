@@ -8,6 +8,7 @@
 <%@page import="sio.la2028.model.Athlete"%>
 <%@page import="sio.la2028.model.Pays"%>
 <%@page import="java.util.ArrayList"%>
+<%@ page import="java.time.format.DateTimeFormatter" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -78,7 +79,8 @@
                                 out.println("</td>");
 
                                 out.println("<td>");
-                                out.println(a.getDataNaissance());
+                                DateTimeFormatter formatFr = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                out.println(a.getDataNaissance().format(formatFr));
                                 out.println("</td>");
 
                             }

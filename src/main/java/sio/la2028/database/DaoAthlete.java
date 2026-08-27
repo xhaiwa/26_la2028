@@ -5,6 +5,7 @@
 package sio.la2028.database;
 
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import sio.la2028.model.Athlete;
 import sio.la2028.model.Pays;
@@ -42,9 +43,14 @@ public class DaoAthlete {
                    a.setId(resultatRequete.getInt("a_id"));
                    a.setNom(resultatRequete.getString("a_nom"));
                    a.setPrenom(resultatRequete.getString("a_prenom"));
-                   a.setDataNaissance(Date.valueOf(resultatRequete.getString("a_date_naissance")));
-                    
-                   Pays p = new Pays();
+                   Date dateSql = resultatRequete.getDate("a_date_naissance");
+
+                   if (dateSql != null) {
+                       LocalDateTime dateNaissance = dateSql.toLocalDate().atStartOfDay();
+                       a.setDataNaissance(dateNaissance);
+                   }
+
+                Pays p = new Pays();
                    p.setId(resultatRequete.getInt("p_id"));
                    p.setNom(resultatRequete.getString("p_nom"));
                 

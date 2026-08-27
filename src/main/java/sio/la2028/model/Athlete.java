@@ -5,6 +5,7 @@
 package sio.la2028.model;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -15,7 +16,7 @@ public class Athlete {
     private int id;
     private String nom ;
     private Pays pays ;
-    private Date dataNaissance;
+    private LocalDateTime dataNaissance;
     private String prenom;
 
     public Athlete() {
@@ -26,7 +27,7 @@ public class Athlete {
         this.nom = nom;
     }
 
-    public Athlete(int id, String nom, String prenom, Pays pays, Date dateNaissance) {
+    public Athlete(int id, String nom, String prenom, Pays pays, LocalDateTime dateNaissance) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
@@ -58,11 +59,11 @@ public class Athlete {
         this.pays = pays;
     }
 
-    public Date getDataNaissance() {
+    public LocalDateTime getDataNaissance() {
         return dataNaissance;
     }
 
-    public void setDataNaissance(Date dataNaissance) {
+    public void setDataNaissance(LocalDateTime dataNaissance) {
         this.dataNaissance = dataNaissance;
     }
 
