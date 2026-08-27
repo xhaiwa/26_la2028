@@ -4,6 +4,8 @@
  */
 package sio.la2028.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author zakina
@@ -13,12 +15,23 @@ public class Athlete {
     private int id;
     private String nom ;
     private Pays pays ;
+    private Date dataNaissance;
+    private String prenom;
+
     public Athlete() {
     }
 
     public Athlete(int id, String nom) {
         this.id = id;
         this.nom = nom;
+    }
+
+    public Athlete(int id, String nom, String prenom, Pays pays, Date dateNaissance) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.pays = pays;
+        this.dataNaissance = dateNaissance;
     }
 
     public int getId() {
@@ -44,6 +57,20 @@ public class Athlete {
     public void setPays(Pays pays) {
         this.pays = pays;
     }
-    
-    
+
+    public Date getDataNaissance() {
+        return dataNaissance;
+    }
+
+    public void setDataNaissance(Date dataNaissance) {
+        this.dataNaissance = dataNaissance;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 }
