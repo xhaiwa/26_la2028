@@ -5,12 +5,12 @@ import java.util.List;
 public class Epreuve {
     private int id;
     private String nom;
-    private List<Sport> sport;
+    private Sport sport;
 
     public Epreuve() {
     }
 
-    public Epreuve(int id, String nom, List<Sport> sport) {
+    public Epreuve(int id, String nom, Sport sport) {
         this.id = id;
         this.nom = nom;
         this.sport = sport;
@@ -32,11 +32,11 @@ public class Epreuve {
         this.nom = nom;
     }
 
-    public List<Sport> getSport() {
+    public Sport getSport() {
         return sport;
     }
 
-    public void setSport(List<Sport> sport) {
+    public void setSport(Sport sport) {
         this.sport = sport;
     }
 }

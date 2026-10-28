@@ -80,7 +80,9 @@
 
                                 out.println("<td>");
                                 DateTimeFormatter formatFr = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-                                out.println(a.getDataNaissance().format(formatFr));
+                                out.println(a.getDataNaissance() == null
+                                        ? "Non renseignée"
+                                        : a.getDataNaissance().format(formatFr));
                                 out.println("</td>");
 
                             }
