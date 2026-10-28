@@ -1,11 +1,13 @@
 package sio.la2028.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Epreuve {
     private int id;
     private String nom;
     private Sport sport;
+    private List<EpreuveAthlete> lesEpreuveAthletes;
 
     public Epreuve() {
     }
@@ -38,5 +40,22 @@ public class Epreuve {
 
     public void setSport(Sport sport) {
         this.sport = sport;
+    }
+
+    public List<EpreuveAthlete> getLesEpreuveAthletes() {
+        return lesEpreuveAthletes;
+    }
+
+    public void setLesEpreuveAthletes(List<EpreuveAthlete> lesEpreuveAthletes) {
+        this.lesEpreuveAthletes = lesEpreuveAthletes;
+    }
+
+    public void addEpreuveAthlete(EpreuveAthlete ea){
+
+        if (lesEpreuveAthletes == null){
+            lesEpreuveAthletes = new ArrayList<EpreuveAthlete>();
+        }
+        lesEpreuveAthletes.add(ea);
+        ea.setEpreuve(this);
     }
 }

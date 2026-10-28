@@ -4,7 +4,7 @@
  */
 package sio.la2028.model;
 
-import java.sql.Date;
+import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class Athlete {
     private Pays pays ;
     private LocalDateTime dataNaissance;
     private String prenom;
-    private List<Epreuve> epreuves;
+    private List<EpreuveAthlete> lesEpreuveAthletes;
 
     public Athlete() {
     }
@@ -29,13 +29,13 @@ public class Athlete {
         this.nom = nom;
     }
 
-    public Athlete(int id, String nom, String prenom, Pays pays, LocalDateTime dateNaissance, List<Epreuve> epreuves) {
+    public Athlete(int id, String nom, String prenom, Pays pays, LocalDateTime dateNaissance, List<EpreuveAthlete> lesEpreuveAthletes) {
         this.id = id;
         this.nom = nom;
         this.prenom = prenom;
         this.pays = pays;
         this.dataNaissance = dateNaissance;
-        this.epreuves = epreuves;
+        this.lesEpreuveAthletes = lesEpreuveAthletes;
     }
 
     public int getId() {
@@ -76,5 +76,22 @@ public class Athlete {
 
     public void setPrenom(String prenom) {
         this.prenom = prenom;
+    }
+
+    public List<EpreuveAthlete> getLesEpreuveAthletes() {
+        return lesEpreuveAthletes;
+    }
+
+    public void setLesEpreuveAthletes(List<EpreuveAthlete> lesEpreuveAthletes) {
+        this.lesEpreuveAthletes = lesEpreuveAthletes;
+    }
+
+    public void addEpreuveAthlete(EpreuveAthlete ea){
+
+        if (lesEpreuveAthletes == null){
+            lesEpreuveAthletes = new ArrayList<EpreuveAthlete>();
+        }
+        lesEpreuveAthletes.add(ea);
+        ea.setAthlete(this);
     }
 }
