@@ -84,7 +84,6 @@ public class ServletEpreuve extends HttpServlet {
         // Récup et affichage les athletes
         if(url.equals("/la2028_war/ServletEpreuve/lister"))
         {
-            System.out.println("ioewhfiiiiiiiiihfiuewhoiuehrogehgiurehgiurehgiurehgrehgjnvinreiuvneiur------------------------");
             ArrayList<Epreuve> lesEpreuves = DaoEpreuve.getLesEpreuves(cnx);
 
             System.out.println("------------------");
