@@ -31,6 +31,14 @@
         <servlet-name>ServletAthlete</servlet-name>
         <url-pattern>/ServletAthlete/ajouter</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>ServletEpreuveAthlete</servlet-name>
+        <servlet-class>sio.la2028.servlet.ServletEpreuveAthlete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletEpreuveAthlete</servlet-name>
+        <url-pattern>/ServletEpreuveAthlete/lister</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

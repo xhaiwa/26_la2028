@@ -65,7 +65,7 @@
             out.println(a.getId());
             out.println("</td>");
 
-            out.println("<td><a href ='../ServletAthlete/consulter?idAthlete="+ a.getId()+ "'>");
+            out.println("<td><a href ='../ServletEpreuveAthlete/lister?idEpreuve="+ a.getId()+ "'>");
             out.println(a.getNom());
             out.println("</a></td>");;
 
